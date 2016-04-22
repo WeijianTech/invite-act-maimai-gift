@@ -1,0 +1,176 @@
+@charset "utf-8";
+
+/**
+ * Bootstrap 全局组件样式自定义
+ */
+
+/* 页默认样式 */
+html {
+  font-size: #{$GlobalRootEmSize}px;
+  background: #fff;
+}
+
+body {
+  @include fontSizeToRem(16px);
+  font-family: $font-default;
+  background: $color-background;
+  color: $color-primary;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a,
+a:hover,
+a:focus,
+a:active,
+a:visited {
+  text-decoration: none;
+}
+
+/* 栅格系统 */
+.col-xs-12 {
+  /*padding-right: pxToRem(15px);
+  padding-left: pxToRem(15px);*/
+}
+
+/* 排版样式 */
+.h3, h3 {
+  /*@include fontSizeToRem(24px);*/
+}
+
+/* 表单项 */
+label {
+  border-bottom: 2px solid $color-primary;
+  padding: pxToRem(12px);
+  & > * {
+    vertical-align: middle;
+  }
+}
+
+/* 输入框 */
+.form-control {
+  display: inline-block;
+  width: auto;
+  height: auto;
+  padding: pxToRem(20px) 0 pxToRem(14px) 0;
+  @include fontSizeToRem(28px);
+  line-height: 1;
+  color: $color-primary;
+  background: none;
+  border: 0 none;
+  border-radius: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075);
+  letter-spacing: .1em;
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: none;
+  }
+}
+
+@include placeholder('.form-control');
+
+/* 按钮样式 */
+.btn {
+  min-width: pxToRem(160px);
+  height: auto;
+  padding: pxToRem(17px);
+  @include fontSizeToRem(28px);
+  line-height: 1;
+  border-radius: pxToRem(62px);
+
+  &.btn-primary {
+    color: $color-opposite;
+    background-color: $color-primary;
+    border-color: $color-primary;
+    &:hover,
+    &.focus,
+    &:focus,
+    &.active,
+    &:active
+    &.visited,
+    &:visited {
+      color: $color-opposite;
+      background-color: darken($color-primary, 20%);
+      border-color: darken($color-primary, 20%);
+    }
+  }
+
+  &.btn-download {
+    color: white;
+    background-color: #cc5870;
+    border-color: #cc5870;
+    border-radius: 0;
+    &:hover,
+    &.focus,
+    &:focus,
+    &.active,
+    &:active
+    &.visited,
+    &:visited {
+      color: white;
+      background-color: darken(#cc5870, 20%);
+      border-color: darken(#cc5870, 20%);
+    }
+  }
+}
+
+/* 标签样式 */
+.badge {
+  min-width: pxToRem(10px);
+  padding: pxToRem(3px) pxToRem(6px);
+  font-size: pxToRem(12px);
+  font-weight: normal;
+  border-radius: pxToRem(2px);
+  & > * {
+    vertical-align: middle;
+  }
+  &-gender {
+    margin-left: pxToRem(10px);
+    font-weight: normal;
+    font-size: pxToRem(18px);
+    &-male {
+      background-color: #99BBf7;
+    }
+    &-female {
+      background-color: #f994ab;
+    }
+    & > * {
+      display: inline-block;
+      vertical-align: middle;
+      height: .8em;
+    }
+  }
+  &-price {
+    padding: pxToRem(4px) pxToRem(10px);
+    font-size: pxToRem(20px);
+    background-color: #76cbee;
+  }
+}
+
+/* 媒体对象 */
+
+// flex
+.media {
+  margin-top: pxToRem(15px);
+  .media-left,
+  .media > .pull-left,
+  .media-right,
+  .media > .pull-right {
+    padding-right: pxToRem(10px);
+  }
+  .media-body {
+    width: auto;
+    .media-heading {
+      margin-top: 0;
+      margin-bottom: 0;
+      & > * {
+        vertical-align: middle;
+      }
+    }
+  }
+}

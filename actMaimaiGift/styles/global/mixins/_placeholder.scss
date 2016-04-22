@@ -1,0 +1,41 @@
+@charset "utf-8";
+
+/**
+ * input placeholder style
+ */
+
+@mixin placeholder($prefix) {
+  #{$prefix}::-webkit-input-placeholder { /* Chrome */
+    color: $color-primary;
+    opacity: .5;
+  }
+  #{$prefix}:focus::-webkit-input-placeholder {
+    color: $color-primary;
+    opacity: 1;
+  }
+  #{$prefix}:-ms-input-placeholder { /* IE 10+ */
+    color: $color-primary;
+    opacity: .5;
+  }
+  #{$prefix}:focus:-ms-input-placeholder {
+    color: $color-primary;
+    opacity: 1;
+  }
+  #{$prefix}::-moz-placeholder { /* Firefox 19+ */
+    color: $color-primary;
+    opacity: .5;
+  }
+  #{$prefix}:focus::-moz-placeholder {
+    color: $color-primary;
+    opacity: 1;
+  }
+  #{$prefix}:-moz-placeholder { /* Firefox 4 - 18 */
+    color: $color-primary;
+    opacity: .5;
+  }
+  #{$prefix}:focus:-moz-placeholder {
+    color: $color-primary;
+    opacity: 1;
+  }
+}
+
